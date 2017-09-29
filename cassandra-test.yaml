@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: cassandra-api
+  labels:
+    app: cassandra-cassandra
+spec:
+  containers:
+  - name: test
+    ports:
+    - containerPort: 9042
+    - containerPort: 3030
+    image: quorauk/cassapi:latest
+    imagePullPolicy: Always
+    env:
+    - name: ENDPOINT
+      value: 100.96.1.4
